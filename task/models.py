@@ -10,3 +10,7 @@ class Task(models.Model):
     ]
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
     task_type = models.CharField(max_length=3, choices=task_types, default='per')
+    title = models.CharField(max_length=120)
+
+    def __str__(self):
+        return f'{self.title} : {self.user}'

@@ -6,3 +6,5 @@ class Users(models.Model):
     email = models.EmailField()
     profile_image = models.ImageField(upload_to='images', default='Screenshot_from_2023-01-07_20-45-18.png')
 
+    def __str__(self):
+        return self.username
