@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from task.models import Task
 from users.models import User
@@ -15,7 +15,8 @@ def all_users(request):
     return render(request, 'index.html', context)
 
 def task_detail(request, task_id):
-    task = Task.objects.get(pk=task_id)
+    # task = Task.objects.get(pk=task_id)
+    task = get_object_or_404(Task, pk=task_id)
     context = {
         'task': task
     }
