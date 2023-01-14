@@ -23,3 +23,7 @@ class User(models.Model):
             raise Exception('You can delete this user')
         else:
             super().delete()
+
+    class Meta:
+        ordering = ['username']
+
