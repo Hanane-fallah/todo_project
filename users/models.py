@@ -17,3 +17,9 @@ class User(models.Model):
         else:
             self.username = self.username.lower()
             super().save()
+
+    def delete(self, using=None, keep_parents=False):
+        if self.username == 'han':
+            raise Exception('You can delete this user')
+        else:
+            super().delete()
