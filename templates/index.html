@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h3>Users :</h3>
+{%  for u in users %}
+    <li>{{ u.username }} : {{ u.email }}</li>
+{% endfor %}
+
+<h3>Tasks :</h3>
+{%  for t in tasks %}
+    <li>{{ t.title }} : {{ t.task_type }} Done:  {{ t.done }}</li>
+{% endfor %}
+
+</body>
+</html>
