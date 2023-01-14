@@ -1,5 +1,5 @@
 from django.db import models
-from users.models import Users
+from users.models import User
 # Create your models here.
 class Task(models.Model):
     task_types = [
@@ -8,7 +8,7 @@ class Task(models.Model):
         ('per', 'personal'),
         ('fam', 'family')
     ]
-    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     task_type = models.CharField(max_length=3, choices=task_types, default='per')
     title = models.CharField(max_length=120, null=True)
     done = models.BooleanField(default=False)
